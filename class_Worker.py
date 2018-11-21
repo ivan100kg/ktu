@@ -10,42 +10,43 @@ from tkinter import *
 class Worker:
     """данные о рабочем"""
     # инициализация, не требует обязательных аргументов
-    def __init__(self, name="Unknown worker", parent=None):
+    def __init__(self, name="Unknown worker", parent=None, font=None):
         self.frame = Frame(parent)  # рамка
         self.frame.pack()
+        self.font=font
 
         self.name = str(name)   # имя
-        self.lbl_name = Label(self.frame, text=self.name, width=7, bg="#000080", fg='#C0C0C0', font=("Consolas", 14, "bold"))
+        self.lbl_name = Label(self.frame, text=self.name, width=7, bg="#000080", fg='#C0C0C0', font=self.font)
         self.lbl_name.pack(side=LEFT)
 
         self.otr = 0    # отработанные часы
         self.var_otr = StringVar()
-        self.ent_otr = Entry(self.frame, textvariable=self.var_otr, width=6, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_otr = Entry(self.frame, textvariable=self.var_otr, width=6, bg="#FFA500", bd=2, font=self.font)
         self.ent_otr.pack(side=LEFT)
 
         self.zak = 0    # закрытые часы
         self.var_zak = StringVar()
-        self.ent_zak = Entry(self.frame, textvariable=self.var_zak, width=6, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_zak = Entry(self.frame, textvariable=self.var_zak, width=6, bg="#FFA500", bd=2, font=self.font)
         self.ent_zak.pack(side=LEFT)
 
         self.sve = 0    # сверхурочные
         self.var_sve = StringVar()
-        self.ent_sve = Entry(self.frame, textvariable=self.var_sve, width=5, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_sve = Entry(self.frame, textvariable=self.var_sve, width=5, bg="#FFA500", bd=2, font=self.font)
         self.ent_sve.pack(side=LEFT)
 
         self.otr_s = 0  # отработанные субботы (часы)
         self.var_otr_s = StringVar()
-        self.ent_otr_s = Entry(self.frame, textvariable=self.var_otr_s, width=5, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_otr_s = Entry(self.frame, textvariable=self.var_otr_s, width=5, bg="#FFA500", bd=2, font=self.font)
         self.ent_otr_s.pack(side=LEFT)
 
         self.zak_s = 0  # закрытые часы за субботы
         self.var_zak_s = StringVar()
-        self.ent_zak_s = Entry(self.frame, textvariable=self.var_zak_s, width=5, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_zak_s = Entry(self.frame, textvariable=self.var_zak_s, width=5, bg="#FFA500", bd=2, font=self.font)
         self.ent_zak_s.pack(side=LEFT)
 
         self.ktu = 0    # кту
         self.var_ktu = StringVar()
-        self.ent_ktu = Entry(self.frame, textvariable=self.var_ktu, width=4, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_ktu = Entry(self.frame, textvariable=self.var_ktu, width=4, bg="#FFA500", bd=2, font=self.font)
         self.ent_ktu.pack(side=LEFT)
 
         self.coef = 0   # коэффициент переработки без суббот
@@ -56,22 +57,22 @@ class Worker:
 
         self.coef_f = 0 # общий коэф
         self.var_coef_f = StringVar()
-        self.ent_coef_f = Entry(self.frame, textvariable=self.var_coef_f, width=4, bg="#FF8C00", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_coef_f = Entry(self.frame, textvariable=self.var_coef_f, width=4, bg="#FF8C00", bd=2, font=self.font)
         self.ent_coef_f.pack(side=LEFT)
 
         self.prir_d = 0 # приработок по кту(должен быть)
         self.var_prir_d = StringVar()
-        self.ent_prir_d = Entry(self.frame, textvariable=self.var_prir_d, width=6, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_prir_d = Entry(self.frame, textvariable=self.var_prir_d, width=6, bg="#FFA500", bd=2, font=self.font)
         #self.ent_prir_d.pack(side=LEFT)
 
         self.prir = 0   # реальный приработок
         self.var_prir = StringVar()
-        self.ent_prir = Entry(self.frame, textvariable=self.var_prir, width=6, bg="#FFA500", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_prir = Entry(self.frame, textvariable=self.var_prir, width=6, bg="#FFA500", bd=2, font=self.font)
         #self.ent_prir.pack(side=LEFT)
 
         self.prir_r = 0  # разница приработок
         self.var_prir_r = StringVar()
-        self.ent_prir_r = Entry(self.frame, textvariable=self.var_prir_r, width=6, bg="#FF8C00", bd=2, font=("Consolas", 14, "bold"))
+        self.ent_prir_r = Entry(self.frame, textvariable=self.var_prir_r, width=6, bg="#FF8C00", bd=2, font=self.font)
         self.ent_prir_r.pack(side=LEFT)
 
 
